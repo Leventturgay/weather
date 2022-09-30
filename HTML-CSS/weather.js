@@ -10,3 +10,10 @@ localStorage.setItem(
 //   `tokenKeyEncrypted`,
 //   EncryptStringAES(`d7938bfaa9a0fc0e16466a45a23f82ac`)
 // );
+form.addEventListener(`submit`, (event) => {
+  event.preventDefault();
+  getWeatherDataFromApi();
+});
+const getWeatherDataFromApi = () => {
+  const tokenKey = DecryptStringAES(localStorage.getItem(`tokenKey`));
+};
