@@ -64,6 +64,12 @@ const getWeatherDataFromApi = async () => {
                             </figure>`;
     list.prepend(createdLi);
     form.reset();
+
+    createdLi.addEventListener("click", (e) => {
+      if (e.target.tagName == "IMG") {
+        e.target.src = e.target.src == iconUrl ? iconUrlAWS : iconUrl;
+      }
+    });
   } catch (error) {
     console.log(error);
     msg.innerText = response.message;
